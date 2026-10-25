@@ -1,0 +1,13 @@
+{
+  "name": "krishimitra-ai",
+  "private": true,
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "doctor": "npm --prefix backend run doctor",
+    "seed:admin": "npm --prefix backend run seed:admin",
+    "test:backend": "npm --prefix backend test"
+  }
+}

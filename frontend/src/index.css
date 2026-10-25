@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-paper text-ink font-sans text-base antialiased; }
+  h1, h2, h3 { @apply font-display text-forest-dark; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-gold; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-forest text-white hover:bg-forest-light; }
+  .btn-gold { @apply btn bg-gold text-forest-dark hover:brightness-95; }
+  .btn-outline { @apply btn border border-forest/30 text-forest hover:bg-leaf-light; }
+  .input { @apply w-full rounded-lg border border-earth/30 bg-white px-3 py-2.5 text-sm placeholder:text-ink/40 focus:border-forest focus:outline-none focus:ring-2 focus:ring-leaf/40; }
+  .label { @apply mb-1 block text-sm font-medium text-ink/80; }
+  .field-error { @apply mt-1 text-xs text-red-700; }
+  .card { @apply rounded-xl border border-earth/15 bg-white p-5 shadow-sm; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  header, nav, footer, aside, .no-print { display: none !important; }
+  body { background: white; }
+}
+
+/* Google Website Translator: hide its banner and keep the page where it is. */
+body { top: 0 !important; }
+body > .skiptranslate, iframe.goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+
+/* Crop Doctor: when the result is printed or saved as PDF, keep each card in one piece and print its colours. */
+@media print {
+  .print-card { break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
