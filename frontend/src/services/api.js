@@ -49,7 +49,6 @@
 
 // export default api;
 
-javascript
 import axios from 'axios';
 
 const TOKEN_KEY = 'krishimitra_token';
